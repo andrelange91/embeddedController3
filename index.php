@@ -15,5 +15,6 @@ AppFactory::setContainer($containerBuilder->build());
 $app = AppFactory::create();
 
 require_once __DIR__ . "/routes.php";
-
+$app->addRoutingMiddleware();
+$app->addErrorMiddleware(true,true,true);
 $app->run();

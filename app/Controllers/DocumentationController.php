@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Twig\Environment as Twig;
+use Slim\Routing\RouteContext as RouteContext;
 
 class DocumentationController
 {
@@ -15,7 +16,9 @@ class DocumentationController
 
     public function DocumentationPage(Request $request, Response $response)
     {
-        $html = $this->twig->render('DocumentationPage.twig');
+        $route = RouteContext::fromRequest($request)->getRoute();
+
+        $html = $this->twig->render('DocumentationPage.twig', ["routeName" => $route->getName()]);
 
         $response->getBody()->write($html);
         return $response;
