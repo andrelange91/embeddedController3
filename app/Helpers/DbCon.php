@@ -10,7 +10,7 @@ class DbCon{
             $username = 'db_user';
             $password = 'password';
             $database = 'weather_app';
-            $dsn = "mysql:host=$host;dbname=$database";
+            $dsn = 'mysql:dbname=' . $database . ';host=' . $host . ';port=3306;charset=utf8';
             try {
                 $this->connection = new \PDO($dsn, $username, $password);
             } catch (\PDOException $e) {
