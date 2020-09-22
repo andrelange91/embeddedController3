@@ -5,9 +5,9 @@ class DbCon{
     function connectToDb()
     {
         $host     = "localhost";
-        $username = "";
-        $password = "";
-        $database = "";
+        $username = "db_user@localhost";
+        $password = "password";
+        $database = "weather_app";
 
         
         $objCon = new mysqli($host, $username, $password, $database);
