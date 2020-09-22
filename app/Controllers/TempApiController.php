@@ -22,7 +22,8 @@ class TempApiController
         if (!empty($data)) {
             $firstRow = $data[array_keys($data)[0]];
             // Do stuff with first row
-
+            var_dump($firstRow); 
+            die(); 
             $response->getBody()->write($firstRow);
             return $response;
         }else{
