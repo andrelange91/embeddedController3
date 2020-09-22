@@ -37,7 +37,7 @@ class DbCon{
         if($stmt === false || !in_array($stmt->errorCode(), $this->allowed)){
             die("du har en fejl i din runGetSql. Tjek følgende:<br>".$sql);
         } else {
-            return $stmt->fetchAll();  
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);  
         }
     }
 
