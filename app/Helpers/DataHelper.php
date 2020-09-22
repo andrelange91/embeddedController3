@@ -26,7 +26,7 @@ class DataHelper
     }
 
     public function GetHighest(){
-        $sql = "SELECT MAX(Temperature) FROM daily_recordings where cast(RegisterTime as Date) = cast(getdate() as Date)"; // call db..
+        $sql = "SELECT MAX(Temperature) FROM daily_recordings WHERE DATE(RegisterTime) = CURRENT_DATE();"; // call db..
         return $this->db->runGetSql($sql);
     }
 
