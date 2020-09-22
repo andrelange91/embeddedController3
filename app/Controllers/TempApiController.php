@@ -20,6 +20,7 @@ class TempApiController
         $dataHelper = $this->container->get(DataHelper::class);
         $data = $dataHelper->GetHighest();
         if (!empty($data)) {
+            var_dump($data[0]);
             $firstRow = $data[array_keys($data)[0]];
 
             var_dump($firstRow);
