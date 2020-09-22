@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use App\Helpers\DataHelper;
+use Psr\Container\ContainerInterface;
 
 class TempApiController
 {
@@ -24,7 +25,7 @@ class TempApiController
         return $response;
     }
 
-    
+
     public function GetLowestTemperature(Request $request, Response $response)
     {
         $data = "-1c";
