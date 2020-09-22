@@ -12,7 +12,7 @@ class DbCon{
             $database = 'weather_app';
             $dsn = "mysql:host=$host;dbname=$database";
             try {
-                $this->connection = new PDO($dsn, $username, $password);
+                $this->connection = new \PDO($dsn, $username, $password);
             } catch (\PDOException $e) {
                 var_dump($e);
                 die('Ingen forbindelse til databasen');
