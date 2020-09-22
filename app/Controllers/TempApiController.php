@@ -22,7 +22,7 @@ class TempApiController
         if (!empty($data)) {
             $firstRow = $data[array_keys($data)[0]];
 
-            $response->getBody()->write($firstRow);
+            $response->getBody()->write($firstRow[0]);
             return $response;
         }else{
             $response->getBody()->write("no data found");
