@@ -26,17 +26,17 @@ class DataHelper
     }
 
     public function GetHighest(){
-        $sql = "SELECT MAX(Temperature) FROM daily_recordings where cast(Temperature as Date) = cast(getdate() as Date)"; // call db..
+        $sql = "SELECT MAX(Temperature) FROM daily_recordings where cast(RegisterTime as Date) = cast(getdate() as Date)"; // call db..
         return $this->db->runGetSql($sql);
     }
 
     public function GetMedian(){        
-        $sql = "SELECT MIN(Temperature) FROM daily_recordings where cast(Temperature as Date) = cast(getdate() as Date)"; // call db..
+        $sql = "SELECT MIN(Temperature) FROM daily_recordings where cast(RegisterTime as Date) = cast(getdate() as Date)"; // call db..
         return $this->db->runGetSql($sql);
     }
 
     public function GetLowest(){
-        $sql = "SELECT MIN(tempvalue) FROM temps where cast(tempDate as Date) = cast(getdate() as Date)"; // call db..
+        $sql = "SELECT MIN(Temperature) FROM daily_recordings where cast(RegisterTime as Date) = cast(getdate() as Date)"; // call db..
         return $this->db->runGetSql($sql);
     }
 }
