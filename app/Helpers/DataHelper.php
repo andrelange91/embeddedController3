@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\Helpers;
+use App\Helpers\DbCon;
 
 // connect to db
 include_once 'dbcon.php';
