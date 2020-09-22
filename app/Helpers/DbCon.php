@@ -2,7 +2,7 @@
 namespace App\Helpers;
 
 class DbCon{
-    function connectToDb()
+    public function connectToDb()
     {
         $host     = "localhost";
         $username = "db_user@localhost";
@@ -20,7 +20,7 @@ class DbCon{
         }
     }
 
-    function runSetSql($sql)
+    public function runSetSql($sql)
     {
         $dbCon = connectToDb();
         $dbCon->query($sql);
@@ -31,7 +31,7 @@ class DbCon{
             return true;
         }
     }
-    function runGetSql($sql)
+    public function runGetSql($sql)
     {
         $data = array();
         $dbCon = connectToDb();
