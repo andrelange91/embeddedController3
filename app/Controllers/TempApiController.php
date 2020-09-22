@@ -8,15 +8,23 @@ use App\Helpers\DataHelper;
 
 class TempApiController
 {
+    private ContainerInterface $container;
+
+    public function __construct(ContainerInterface $container) {
+        $this->container = $container;
+    }
+
     public function GetHighestTemperature(Request $request, Response $response)
     {
-        $dataHelper = new DataHelper();
+        $dataHelper = $this->container->get(DataHelper::class);
         $data = $dataHelper->GetHighest();
 
         // $data = "31c";
         $response->getBody()->write($data);
         return $response;
     }
+
+    
     public function GetLowestTemperature(Request $request, Response $response)
     {
         $data = "-1c";
