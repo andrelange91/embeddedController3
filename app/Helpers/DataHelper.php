@@ -19,6 +19,12 @@ include_once 'dbcon.php';
 // get data 
 class DataHelper
 {
+    private DbCon $db;
+
+    public function __construct(DbCon $db) {
+        $this->db = $db;
+    }
+
     public function GetHighest(){
         $conHelper = new DbCon();
         
