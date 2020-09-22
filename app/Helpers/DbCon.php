@@ -6,7 +6,7 @@ class DbCon{
 
     public function getConnection() {
         if ($this->connection === null) {
-            $host = 'localhost';
+            $host = '127.0.0.1';
             $username = 'db_user';
             $password = 'password';
             $database = 'weather_app';
