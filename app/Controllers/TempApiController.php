@@ -19,11 +19,16 @@ class TempApiController
     {
         $dataHelper = $this->container->get(DataHelper::class);
         $data = $dataHelper->GetHighest();
-        var_dump($data);
-        die();
-        // $data = "31c";
-        $response->getBody()->write($data);
-        return $response;
+        if (!empty($data)) {
+            $firstRow = $data[array_keys($data)[0]];
+            // Do stuff with first row
+
+            $response->getBody()->write($firstRow);
+            return $response;
+        }else{
+            $response->getBody()->write("no data found");
+            return $response;
+        }
     }
 
 
