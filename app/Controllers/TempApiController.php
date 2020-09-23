@@ -21,7 +21,7 @@ class TempApiController
         $data = $dataHelper->GetHighest();
         if (!empty($data)) {
             $firstRow = $data[array_keys($data)[0]];
-            var_dump($data['Temperature']);
+            var_dump($firstRow['Temperature']);
             die();
             $response->getBody()->write($firstRow);
 
