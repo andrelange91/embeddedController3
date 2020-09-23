@@ -36,7 +36,7 @@ class TempApiController
     public function GetLowestTemperature(Request $request, Response $response)
     {
         $dataHelper = $this->container->get(DataHelper::class);
-        $data = $dataHelper->GetLowestTemperature();
+        $data = $dataHelper->GetLowest();
         if (!empty($data)) {
             $firstRow = $data[array_keys($data)[0]];
 
