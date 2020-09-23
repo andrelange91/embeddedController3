@@ -30,13 +30,8 @@ class DataHelper
         return $this->db->runGetSql($sql);
     }
 
-    public function GetMedian(){        
-        $sql = "SELECT MIN(Temperature) FROM daily_recordings where cast(RegisterTime as Date) = cast(getdate() as Date)"; // call db..
-        return $this->db->runGetSql($sql);
-    }
-
     public function GetLowest(){
-        $sql = "SELECT MIN(Temperature) FROM daily_recordings where cast(RegisterTime as Date) = cast(getdate() as Date)"; // call db..
+        $sql = "SELECT Temperature FROM daily_recordings WHERE DATE(RegisterTime) = CURRENT_DATE() ORDER BY Temperature ASC LIMIT 1"; // call db..
         return $this->db->runGetSql($sql);
     }
 }

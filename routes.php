@@ -11,4 +11,3 @@ $app->get('/api/documentation', DocumentationController::class . ':Documentation
 // API Routes
 $app->get('/api/gethighesttemperature', TempApiController::class . ':GetHighestTemperature');
 $app->get('/api/getlowesttemperature', TempApiController::class . ':GetLowestTemperature');
-$app->get('/api/getmediantemperature', TempApiController::class . ':GetMedianTemperature');

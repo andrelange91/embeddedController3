@@ -20,13 +20,10 @@ class TempApiController
         $dataHelper = $this->container->get(DataHelper::class);
         $data = $dataHelper->GetHighest();
         if (!empty($data)) {
-            var_dump($data[0]);
             $firstRow = $data[array_keys($data)[0]];
-
             var_dump($firstRow);
-            var_dump($firstRow[0]);
             die();
-            $response->getBody()->write($firstRow[0]);
+            $response->getBody()->write($firstRow);
 
             return $response;
         }else{
@@ -38,14 +35,17 @@ class TempApiController
 
     public function GetLowestTemperature(Request $request, Response $response)
     {
-        $data = "-1c";
-        $response->getBody()->write($data);
-        return $response;
-    }
-    public function GetMedianTemperature(Request $request, Response $response)
-    {
-        $data = "21c";
-        $response->getBody()->write($data);
-        return $response;
+        $dataHelper = $this->container->get(DataHelper::class);
+        $data = $dataHelper->GetLowestTemperature();
+        if (!empty($data)) {
+            $firstRow = $data[array_keys($data)[0]];
+
+            $response->getBody()->write($firstRow);
+
+            return $response;
+        }else{
+            $response->getBody()->write("no data found");
+            return $response;
+        }
     }
 }
