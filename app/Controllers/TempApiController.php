@@ -47,4 +47,9 @@ class TempApiController
             return $response;
         }
     }
+
+    // public function InsertTemperature(Request $request, Response $response, Args $args){
+    //     $dataHelper = $this->container->get(DataHelper::class);
+    //     $data = $dataHelper->InsertTemp();
+    // }
 }

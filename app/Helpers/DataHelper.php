@@ -34,4 +34,9 @@ class DataHelper
         $sql = "SELECT Temperature FROM daily_recordings WHERE DATE(RegisterTime) = CURRENT_DATE() ORDER BY Temperature ASC LIMIT 1"; // call db..
         return $this->db->runGetSql($sql);
     }
+
+    // public function InsertTemp($RegisterTime, $Temperature, $Location){
+    //     $sql = "INSERT INTO daily_recordings (RegisterTime, Temperature, Location) VALUES ($RegisterTime, $Temperature, $Location)";
+    //     return $this->db->runSetSql($sql);
+    // }
 }
