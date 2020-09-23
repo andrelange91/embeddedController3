@@ -48,8 +48,15 @@ class TempApiController
         }
     }
 
-    // public function InsertTemperature(Request $request, Response $response, Args $args){
+    // public function InsertTemperature(Request $request, Response $response, $args){
+    //     $registerTime = $args['RegisterTime'];
+    //     $temperature = $args['Temperature'];
+    //     $location = $args['Location'];
+     
     //     $dataHelper = $this->container->get(DataHelper::class);
-    //     $data = $dataHelper->InsertTemp();
+    //     $data = $dataHelper->InsertTemp($registerTime, $temperature, $location);
+
+    //     $response->getBody()->write("row added to collection");
+    //     return $response;
     // }
 }
