@@ -35,8 +35,8 @@ class DataHelper
         return $this->db->runGetSql($sql);
     }
 
-    // public function InsertTemp($RegisterTime, $Temperature, $Location){
-    //     $sql = "INSERT INTO daily_recordings (RegisterTime, Temperature, Location) VALUES ($RegisterTime, $Temperature, $Location)";
-    //     return $this->db->runSetSql($sql);
-    // }
+    public function InsertTemp($RegisterTime, $Temperature, $Location){
+        $sql = "INSERT INTO daily_recordings (RegisterTime, Temperature, Location) VALUES ($RegisterTime, $Temperature, $Location)";
+        return $this->db->runSetSql($sql);
+    }
 }
