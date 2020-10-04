@@ -53,6 +53,11 @@ class TempApiController
         $temperature = $args['Temperature'];
         $location = $args['Location'];
      
+        var_dump($temperature);
+        var_dump($registerTime);
+        var_dump($location);
+        die();
+
         $dataHelper = $this->container->get(DataHelper::class);
         $data = $dataHelper->InsertTemp($registerTime, $temperature, $location);
 
