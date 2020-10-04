@@ -57,6 +57,10 @@ class TempApiController
         var_dump($data->Temperature);
         var_dump($data->RegisterTime);
         var_dump($data->Location);
+        var_dump($request->getQuery());
+        var_dump($request->getScheme());
+        var_dump($request->getParsedBody());
+
         die();
 
         $dataHelper = $this->container->get(DataHelper::class);
