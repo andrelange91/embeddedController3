@@ -49,17 +49,19 @@ class TempApiController
     }
 
     public function InsertTemperature(Request $request, Response $response, $args){
-        // $registerTime = $args['RegisterTime'];
-        // $temperature = $args['Temperature'];
-        // $location = $args['Location'];
+        
         $data = json_decode($request->getBody());
 
-        var_dump($data->Temperature);
-        var_dump($data->RegisterTime);
-        var_dump($data->Location);
-        var_dump($request->getParsedBody());
+        $registerTime = $data->RegisterTime;
+        $temperature = $data->Temperature;
+        $location = $data->Location;
 
-        die();
+
+        // var_dump($data->Temperature);
+        // var_dump($data->RegisterTime);
+        // var_dump($data->Location);
+
+        // die();
 
         $dataHelper = $this->container->get(DataHelper::class);
         $data = $dataHelper->InsertTemp($registerTime, $temperature, $location);
